@@ -3,63 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tasks</title>
+    <title>Web Development Internship Tasks - Sir Afhan Akhtar Lodhi</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header><h1>Internship Task Dashboard</h1></header>
+    <div class="main-container">
+        <h1>Web Development Internship Tasks</h1>
 
-    <main class="container">
-        <!-- Task 8: Tabs -->
-        <section class="card">
-            <h2>8. Tabbed Navigation Menu</h2>
-            <div class="tabs">
-                <button class="tab-btn active" onclick="openTab(event, 'Home')">Home</button>
-                <button class="tab-btn" onclick="openTab(event, 'Services')">Services</button>
-                <button class="tab-btn" onclick="openTab(event, 'Contact')">Contact</button>
+        <!-- Task 8: Tabbed Navigation Menu -->
+        <div class="task-section">
+            <h2>8. Implement Tabbed Navigation Menu</h2>
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="openTab(event, 'Home')">Home</button>
+                    <button class="tab-btn" onclick="openTab(event, 'Services')">Services</button>
+                    <button class="tab-btn" onclick="openTab(event, 'About')">About</button>
+                    <button class="tab-btn" onclick="openTab(event, 'Contact')">Contact</button>
+                </div>
+                <div id="Home" class="tab-content active">
+                    <h3>Home Section</h3>
+                    <p>Welcome to the home page of the tabbed navigation menu.</p>
+                </div>
+                <div id="Services" class="tab-content">
+                    <h3>Services Section</h3>
+                    <p>Here are the professional web development services we offer.</p>
+                </div>
+                <div id="About" class="tab-content">
+                    <h3>About Us</h3>
+                    <p>Learning and implementing frontend web tasks under supervision.</p>
+                </div>
+                <div id="Contact" class="tab-content">
+                    <h3>Contact Us</h3>
+                    <p>Feel free to reach out for queries and support.</p>
+                </div>
             </div>
-            <div id="Home" class="tab-content active"><p>Welcome to the home section of our dashboard.</p></div>
-            <div id="Services" class="tab-content"><p>We offer premium web development services.</p></div>
-            <div id="Contact" class="tab-content"><p>Email us at: info@webdev.com</p></div>
-        </section>
+        </div>
 
-        <!-- Task 9: Todo -->
-        <section class="card">
-            <h2>9. Advanced To-do List</h2>
-            <div class="todo-input">
-                <input type="text" id="todoInput" placeholder="Add a new task...">
-                <button onclick="addTodo()">Add Task</button>
+        <!-- Task 9: To-Do List -->
+        <div class="task-section">
+            <h2>9. Implement To-Do-List</h2>
+            <div class="todo-box">
+                <div class="todo-header">To-do-List</div>
+                <div class="todo-input-area">
+                    <input type="text" id="todoInput" class="todo-input" placeholder="Add your activity here...">
+                    <button id="addBtn" class="todo-btn" onclick="addTodo()">Add</button>
+                </div>
+                <ul id="todoList" class="todo-list">
+                    <li class="todo-item"><span>activity 1</span><button class="delete-btn" onclick="this.parentElement.remove()">×</button></li>
+                    <li class="todo-item"><span>activity 2</span><button class="delete-btn" onclick="this.parentElement.remove()">×</button></li>
+                    <li class="todo-item"><span>activity 3</span><button class="delete-btn" onclick="this.parentElement.remove()">×</button></li>
+                    <li class="todo-item"><span>activity 4</span><button class="delete-btn" onclick="this.parentElement.remove()">×</button></li>
+                </ul>
             </div>
-            <ul id="todoList"></ul>
-        </section>
+        </div>
 
-        <!-- Task 10: Slider -->
-        <section class="card">
-            <h2>10. Responsive Image Slider</h2>
-            <div class="slider-wrapper">
+        <!-- Task 10: Image Slider -->
+        <div class="task-section">
+            <h2>10. Implement an Image Slider in JS</h2>
+            <div class="slider-container">
                 <div class="slider">
-                    <img src="1000460551.jpg" class="active">
-                    <img src="1000460550.jpg">
-                    <img src="1000460549.jpg">
-                    <img src="1000460548.jpg">
+                    <img src="1000460551.jpg" class="slide active" alt="Slide 1">
+                    <img src="1000460550.jpg" class="slide" alt="Slide 2">
+                    <img src="1000460549.jpg" class="slide" alt="Slide 3">
+                    <img src="1000460548.jpg" class="slide" alt="Slide 4">
+                    <img src="1000460547.webp" class="slide" alt="Slide 5">
+                    <img src="1000460546.jpg" class="slide" alt="Slide 6">
                 </div>
-                <button class="prev" onclick="move(-1)">&#10094;</button>
-                <button class="next" onclick="move(1)">&#10095;</button>
+                <button class="slider-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="slider-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
             </div>
-        </section>
+        </div>
 
-        <!-- Task 11: Toggle -->
-        <section class="card">
-            <h2>11. Toggle Switch Control</h2>
-            <div class="toggle-box">
-                <div class="switch" id="toggleSwitch" onclick="toggleEmoji()">
-                    <span class="emoji" id="emoji">☹</span>
+        <!-- Task 11: Create a Toggle Button / Switch -->
+        <div class="task-section">
+            <h2>11. Create a Toggle Button / Switch</h2>
+            <div class="toggles-wrapper">
+                
+                <!-- OFF State Example 1 -->
+                <div class="toggle-row">
+                    <div class="switch off" onclick="toggleThisSwitch(this)">
+                        <span class="emoji">☺</span>
+                    </div>
+                    <span class="status-label">OFF</span>
                 </div>
-                <p id="statusText">System: ON</p>
+
+                <!-- ON State Example (Interactive) -->
+                <div class="toggle-row">
+                    <div class="switch" id="mainToggle" onclick="toggleMainSwitch()">
+                        <span class="emoji" id="mainEmoji">☹</span>
+                    </div>
+                    <span class="status-label" id="mainStatus">ON</span>
+                </div>
+
+                <!-- OFF State Example 2 -->
+                <div class="toggle-row">
+                    <div class="switch off" onclick="toggleThisSwitch(this)">
+                        <span class="emoji">☺</span>
+                    </div>
+                    <span class="status-label">OFF</span>
+                </div>
+
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
