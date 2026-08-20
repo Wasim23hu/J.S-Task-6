@@ -53,12 +53,12 @@ function moveSlide(direction) {
     slides[currentSlide].classList.add('active');
 }
 
-// Automatic Slide every 3 seconds (3000 milliseconds)
+// Automatic Slide every 3 seconds
 let slideInterval = setInterval(function() {
     moveSlide(1);
 }, 3000);
 
-// Optional: Pause auto-slide when mouse enters the slider container
+// Pause on hover
 const sliderContainer = document.querySelector('.slider-container');
 if (sliderContainer) {
     sliderContainer.addEventListener('mouseenter', function() {
