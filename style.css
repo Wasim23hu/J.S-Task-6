@@ -157,6 +157,7 @@ h1 {
     font-size: 18px;
     border-radius: 4px;
     transition: background 0.3s;
+    z-index: 10;
 }
 .slider-btn:hover { background: rgba(0, 0, 0, 0.9); }
 .prev-btn { left: 15px; }
