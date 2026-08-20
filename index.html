@@ -3,23 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>llTasks </title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="todo-container">
-        <div class="todo-header">To-do-List</div>
-        <div class="todo-input-area">
-            <input type="text" id="todoInput" class="todo-input" placeholder="Add your activity here...">
-            <button id="addBtn" class="todo-btn">Add</button>
+    <div class="task-card">
+        <h2>8. Tabbed Navigation Menu</h2>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(event, 'Home')">Home</button>
+                <button class="tab-btn" onclick="openTab(event, 'Services')">Services</button>
+                <button class="tab-btn" onclick="openTab(event, 'About')">About</button>
+                <button class="tab-btn" onclick="openTab(event, 'Contact')">Contact</button>
+            </div>
+            <div id="Home" class="tab-content active">
+                <h3>Home Section</h3>
+                <p>Welcome to the home page!</p>
+            </div>
+            <div id="Services" class="tab-content">
+                <h3>Services Section</h3>
+                <p>Explore our web development services.</p>
+            </div>
+            <div id="About" class="tab-content">
+                <h3>About Us</h3>
+                <p>Learning web development tasks.</p>
+            </div>
+            <div id="Contact" class="tab-content">
+                <h3>Contact Us</h3>
+                <p>Get in touch with us.</p>
+            </div>
         </div>
-        <ul id="todoList" class="todo-list">
-            <li class="todo-item"><span>activity 1</span><button class="delete-btn">×</button></li>
-            <li class="todo-item"><span>activity 2</span><button class="delete-btn">×</button></li>
-            <li class="todo-item"><span>activity 3</span><button class="delete-btn">×</button></li>
-            <li class="todo-item"><span>activity 4</span><button class="delete-btn">×</button></li>
-        </ul>
+    </div>
+
+    <div class="task-card" style="padding: 0; background: transparent; box-shadow: none;">
+        <div class="todo-box">
+            <div class="todo-header">To-do-List</div>
+            <div class="todo-input-area">
+                <input type="text" id="todoInput" class="todo-input" placeholder="Add your activity here...">
+                <button id="addBtn" class="todo-btn">Add</button>
+            </div>
+            <ul id="todoList" class="todo-list">
+                <li class="todo-item"><span>activity 1</span><button class="delete-btn">×</button></li>
+                <li class="todo-item"><span>activity 2</span><button class="delete-btn">×</button></li>
+                <li class="todo-item"><span>activity 3</span><button class="delete-btn">×</button></li>
+                <li class="todo-item"><span>activity 4</span><button class="delete-btn">×</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <h2>10. Image Slider in JS</h2>
+        <div class="slider-container">
+            <img src="https://picsum.photos/id/1018/600/300" class="slide active" alt="Slide 1">
+            <img src="https://picsum.photos/id/1015/600/300" class="slide" alt="Slide 2">
+            <img src="https://picsum.photos/id/1019/600/300" class="slide" alt="Slide 3">
+            <button class="slider-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="slider-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <h2>11. Toggle Button / Switch</h2>
+        <div class="toggle-wrapper">
+            <label class="switch">
+                <input type="checkbox" id="toggleSwitch" onchange="toggleStatus()">
+                <span class="slider-switch"></span>
+            </label>
+            <span id="statusText" class="toggle-status">OFF</span>
+        </div>
     </div>
 
     <script src="script.js"></script>
