@@ -54,7 +54,6 @@ function moveSlide(direction) {
 }
 
 /* --- Task 11: Toggle Switches --- */
-// Interactive middle switch handler
 function toggleMainSwitch() {
     const sw = document.getElementById('mainToggle');
     const emo = document.getElementById('mainEmoji');
@@ -71,7 +70,6 @@ function toggleMainSwitch() {
     }
 }
 
-// Static/extra toggles handler if clicked
 function toggleThisSwitch(element) {
     element.classList.toggle('off');
     const emo = element.querySelector('.emoji');
