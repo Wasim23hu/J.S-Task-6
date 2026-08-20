@@ -42,7 +42,7 @@ document.getElementById('todoInput').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') { addTodo(); }
 });
 
-/* --- Task 10: Image Slider --- */
+/* --- Task 10: Image Slider (Automatic + Manual) --- */
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 
@@ -51,6 +51,24 @@ function moveSlide(direction) {
     slides[currentSlide].classList.remove('active');
     currentSlide = (currentSlide + direction + slides.length) % slides.length;
     slides[currentSlide].classList.add('active');
+}
+
+// Automatic Slide every 3 seconds (3000 milliseconds)
+let slideInterval = setInterval(function() {
+    moveSlide(1);
+}, 3000);
+
+// Optional: Pause auto-slide when mouse enters the slider container
+const sliderContainer = document.querySelector('.slider-container');
+if (sliderContainer) {
+    sliderContainer.addEventListener('mouseenter', function() {
+        clearInterval(slideInterval);
+    });
+    sliderContainer.addEventListener('mouseleave', function() {
+        slideInterval = setInterval(function() {
+            moveSlide(1);
+        }, 3000);
+    });
 }
 
 /* --- Task 11: Toggle Switches --- */
