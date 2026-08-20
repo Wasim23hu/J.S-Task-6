@@ -1,23 +1,213 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #eef2f3; font-family: 'Segoe UI', sans-serif; padding-bottom: 50px; }
-header { background: #2c3e50; color: white; padding: 20px; text-align: center; margin-bottom: 30px; }
-.container { max-width: 900px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 10px; }
-.card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-h2 { margin-bottom: 15px; color: #34495e; border-left: 5px solid #3498db; padding-left: 10px; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
 
-/* Tabs */
-.tab-btn { padding: 10px 20px; cursor: pointer; border: none; background: #ddd; }
-.tab-btn.active { background: #3498db; color: white; }
+body {
+    background-color: #f4f6f9;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
 
-/* Slider */
-.slider-wrapper { position: relative; width: 100%; height: 250px; overflow: hidden; border-radius: 8px; }
-.slider img { width: 100%; height: 100%; object-fit: cover; display: none; }
-.slider img.active { display: block; }
-.prev, .next { position: absolute; top: 50%; background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; }
-.prev { left: 0; } .next { right: 0; }
+.main-container {
+    width: 100%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 
-/* Toggle */
-.toggle-box { display: flex; align-items: center; gap: 15px; }
-.switch { width: 65px; height: 35px; background: #3498db; border-radius: 30px; display: flex; align-items: center; padding: 5px; cursor: pointer; transition: 0.4s; }
-.switch.off { background: #7f8c8d; justify-content: flex-end; }
-.emoji { font-size: 22px; transition: 0.4s; }
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.task-section {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.task-section h2 {
+    color: #31708f;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #5bc0de;
+    padding-bottom: 8px;
+}
+
+/* --- Task 8: Tabs --- */
+.tab-container {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.tab-buttons {
+    display: flex;
+    background: #5bc0de;
+}
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 14px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.tab-btn:hover { background: rgba(0,0,0,0.1); }
+.tab-btn.active { background: #fff; color: #5bc0de; border-bottom: 3px solid #31708f; }
+.tab-content { display: none; padding: 25px; background: #fff; }
+.tab-content.active { display: block; }
+.tab-content h3 { margin-bottom: 8px; color: #333; }
+.tab-content p { color: #666; line-height: 1.5; }
+
+/* --- Task 9: To-Do List --- */
+.todo-box {
+    background: #5bc0de;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.todo-header {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.todo-input-area {
+    padding: 0 20px 20px 20px;
+    display: flex;
+}
+.todo-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: #fff;
+}
+.todo-btn {
+    background: #dcdcdc;
+    border: none;
+    padding: 0 25px;
+    font-size: 15px;
+    color: #555;
+    cursor: pointer;
+    font-weight: bold;
+}
+.todo-btn:hover { background: #ccc; }
+.todo-list { list-style: none; background: #fff; }
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    color: #333;
+}
+.todo-item:nth-child(odd) { background-color: #f9f9f9; }
+.todo-item:nth-child(even) { background-color: #f1f1f1; }
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+.todo-item:hover .delete-btn { background-color: #ff5c5c; color: white; border-radius: 3px; }
+
+/* --- Task 10: Image Slider --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #000;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+.slide.active { display: block; }
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.slider-btn:hover { background: rgba(0, 0, 0, 0.9); }
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
+
+/* --- Task 11: Toggle Switches (Exact Sir's Design) --- */
+.toggles-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.toggle-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.switch {
+    width: 75px;
+    height: 38px;
+    background-color: #5bc0de; /* ON State Blue */
+    border-radius: 40px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    transition: all 0.3s ease;
+}
+
+.switch .emoji {
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+/* OFF State Style */
+.switch.off {
+    background-color: #95a5a6; /* Gray background */
+    justify-content: flex-end; /* Move circle/emoji to right */
+}
+
+.status-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+    letter-spacing: 1px;
+}
