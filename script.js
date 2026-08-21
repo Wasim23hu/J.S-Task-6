@@ -1,4 +1,4 @@
-/* --- Task 8: Tabbed Navigation --- */
+// Task 8: Tabbed Navigation//
 function openTab(evt, tabName) {
     const tabContents = document.getElementsByClassName("tab-content");
     for (let i = 0; i < tabContents.length; i++) {
@@ -12,7 +12,7 @@ function openTab(evt, tabName) {
     evt.currentTarget.classList.add("active");
 }
 
-/* --- Task 9: To-Do List --- */
+// Task 9: To-Do List//
 function addTodo() {
     const todoInput = document.getElementById('todoInput');
     const todoList = document.getElementById('todoList');
@@ -42,7 +42,7 @@ document.getElementById('todoInput').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') { addTodo(); }
 });
 
-/* --- Task 10: Image Slider (Automatic + Manual) --- */
+//Task 10: Image Slider (Automatic + Manual)//
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 
@@ -53,12 +53,12 @@ function moveSlide(direction) {
     slides[currentSlide].classList.add('active');
 }
 
-// Automatic Slide every 3 seconds
+// Automatic Slide every 3 seconds ///
 let slideInterval = setInterval(function() {
     moveSlide(1);
 }, 3000);
 
-// Pause on hover
+// Pause on hover///
 const sliderContainer = document.querySelector('.slider-container');
 if (sliderContainer) {
     sliderContainer.addEventListener('mouseenter', function() {
@@ -71,7 +71,7 @@ if (sliderContainer) {
     });
 }
 
-/* --- Task 11: Toggle Switches --- */
+// Task 11: Toggle Switches//
 function toggleMainSwitch() {
     const sw = document.getElementById('mainToggle');
     const emo = document.getElementById('mainEmoji');
